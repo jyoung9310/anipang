@@ -1,5 +1,10 @@
 #include "Checker.h"
 
+Checker::Checker(Ani_Pang *a)
+{
+	this->sample = a;
+}
+
 void Checker::Pang_Position_Checker() {
 	int a = 0, b = 0;
 	bool check = false;
@@ -49,13 +54,13 @@ void Checker::Pang_Position_init() {
 	}
 }
 
-void Checker::Row_Checker(Block input[9][9]) {
+void Checker::Row_Checker() {
 	int count;
 
 	for (int row = 0; row < 9; row++) {
 		count = 0;
 		for (int col = 0; col < 8; col++) {
-			if (input[row][col].Shape == input[row][col + 1].Shape) {
+			if (this->sample->AniPang[row][col].Shape == this->sample->AniPang[row][col + 1].Shape) {
 				count++;
 				if (count >= 2) {
 					Pang_Position[row][col - 1] = 1;
@@ -69,14 +74,14 @@ void Checker::Row_Checker(Block input[9][9]) {
 		}
 	}
 }
-void Checker::Col_Checker(Block input[9][9]) {
+void Checker::Col_Checker() {
 	int count;
 
 	for (int col = 0; col < 9; col++) {
 		count = 0;
 		for (int row = 0; row < 8; row++) {
 
-			if (input[row][col].Shape == input[row + 1][col].Shape) {
+			if (this->sample->AniPang[row][col].Shape == this->sample->AniPang[row][col].Shape) {
 				count++;
 				if (count >= 2) {
 					Pang_Position[row - 1][col] = 1;
@@ -90,10 +95,10 @@ void Checker::Col_Checker(Block input[9][9]) {
 		}
 	}
 }
-void Checker::Check(Block input[9][9]) {
+void Checker::Check() {
 	this->Pang_Position_init();
-	this->Row_Checker(input);
-	this->Col_Checker(input);
+	this->Row_Checker();
+	this->Col_Checker();
 	//this->Pang_Position_Checker();
 
 
