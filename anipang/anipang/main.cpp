@@ -8,7 +8,7 @@
 #include"Pang.h"
 
 using namespace std;
-
+//È÷È÷Èý
 
 
 void main()
