@@ -1,0 +1,10 @@
+*.suo
+*.vcxproj
+*.tlog
+anipang/anipang/Debug/
+*.filters
+*.exe
+anipang/Debug/
+*.sln
+*.opensdf
+*.sdf
