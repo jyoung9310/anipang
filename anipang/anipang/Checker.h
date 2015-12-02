@@ -10,7 +10,7 @@ class Checker {
 public:
 	Checker(Ani_Pang *a);//Heart_Pang과 연결하기 위한 생성자
 	void Check(); //Row_Checker 와 Col_Checker를 this-> 로 사용한다.
-	void Whole_Checker(); // 돌릴 수 있는 것 체크 수정할 예정 좀 더 세분화 할 것
+	bool Whole_Checker(Block input[9][9]); // 돌릴 수 있는 것 체크 수정할 예정 좀 더 세분화 할 것
 	int Pang_Pang_Position[20][2];
 	int Pang_Counter[20];
 	void Pang_Position_Checker();

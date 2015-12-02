@@ -103,6 +103,179 @@ void Checker::Check() {
 
 
 }
-void Checker::Whole_Checker() {
+bool Checker::Whole_Checker(Block **input) {
+	for (int i = 0; i < 9; i++){
+		for (int j = 0; j < 9; j++){
+			if ((input[i][j].Shape == input[i][j + 1].Shape) &&
+				(input[i][j].Shape == input[i][j + 3].Shape) &&
+				(j < 5)
+				) {
+				return 1;
+				/*
+				けけ..け
+				*/
 
+			}
+			else if ((input[i][j].Shape == input[i][j + 2].Shape) &&
+				(input[i][j].Shape == input[i][j + 3].Shape) &&
+				(j < 5)
+				) {
+				return 1;
+				/*
+				け..けけ
+				*/
+			}
+			else if ((input[i][j].Shape == input[i + 1][j].Shape) &&
+				(input[i][j].Shape == input[i + 3][j].Shape) &&
+				(i < 5)
+				) {
+				return 1;
+				/*
+				け
+				け
+				..
+				け
+				*/
+			}
+			else if ((input[i][j].Shape == input[i + 2][j].Shape) &&
+				(input[i][j].Shape == input[i + 3][j].Shape) &&
+				(i < 5)
+				) {
+				return 1;
+				/*
+				け
+				..
+				け
+				け
+				*/
+			}
+			else if ((input[i][j + 1].Shape == input[i + 1][j].Shape) &&
+				(input[i][j + 1].Shape == input[i + 1][j + 2].Shape) &&
+				(i < 7) && (j<6)
+				) {
+				return 1;
+				/*
+				..け..
+				け..け
+				*/
+			}
+			else if ((input[i][j].Shape == input[i][j + 2].Shape) &&
+				(input[i][j].Shape == input[i + 1][j + 1].Shape) &&
+				(i < 7) && (j < 6)
+				) {
+				return 1;
+				/*
+				け..け
+				..け..
+				*/
+			}
+			else if ((input[i][j].Shape == input[i + 1][j + 1].Shape) &&
+				(input[i][j].Shape == input[i + 2][j].Shape) &&
+				(i < 6) && (j < 7)
+				) {
+				return 1;
+				/*
+				け..
+				..け
+				け..
+				*/
+			}
+			else if ((input[i][j + 1].Shape == input[i + 1][j].Shape) &&
+				(input[i][j + 1].Shape == input[i + 2][j + 2].Shape) &&
+				(i < 6) && (j < 7)
+				) {
+				return 1;
+				/*
+				..け
+				け..
+				..け
+				*/
+			}
+			else if ((input[i][j].Shape == input[i + 1][j].Shape) &&
+				(input[i][j].Shape == input[i + 2][j + 1].Shape) &&
+				(i < 6) && (j < 7)
+				) {
+				return 1;
+				/*
+				け..
+				け..
+				..け
+				*/
+			}
+			else if ((input[i][j + 1].Shape == input[i + 1][j + 1].Shape) &&
+				(input[i][j + 1].Shape == input[i + 2][j].Shape) &&
+				(i < 6) && (j < 7)
+				) {
+				return 1;
+				/*
+				..け
+				..け
+				け..
+				*/
+			}
+			else if ((input[i][j].Shape == input[i + 1][j + 1].Shape) &&
+				(input[i][j].Shape == input[i + 2][j + 1].Shape) &&
+				(i < 6) && (j < 7)
+				) {
+				return 1;
+				/*
+				け..
+				..け
+				..け
+				*/
+			}
+			else if ((input[i][j + 1].Shape == input[i + 1][j].Shape) &&
+				(input[i][j + 1].Shape == input[i + 2][j].Shape) &&
+				(i < 6) && (j < 7)
+				) {
+				return 1;
+				/*
+				..け
+				け..
+				け..
+				*/
+			}
+			else if ((input[i][j].Shape == input[i][j + 1].Shape) &&
+				(input[i][j].Shape == input[i + 1][j + 2].Shape) &&
+				(i < 7) && (j < 6)
+				) {
+				return 1;
+				/*
+				けけ..
+				....け
+				*/
+			}
+			else if ((input[i][j + 1].Shape == input[i][j + 2].Shape) &&
+				(input[i][j + 1].Shape == input[i + 1][j].Shape) &&
+				(i < 7) && (j < 6)
+				) {
+				return 1;
+				/*
+				..けけ
+				け....
+				*/
+			}
+			else if ((input[i][j].Shape == input[i + 1][j + 1].Shape) &&
+				(input[i][j].Shape == input[i + 1][j + 2].Shape) &&
+				(i < 7) && (j < 6)
+				) {
+				return 1;
+				/*
+				け....
+				..けけ
+				*/
+			}
+			else if ((input[i][j + 2].Shape == input[i + 1][j].Shape) &&
+				(input[i][j + 2].Shape == input[i + 1][j + 1].Shape) &&
+				(i < 7) && (j < 6)
+				) {
+				return 1;
+				/*
+				....け
+				けけ..
+				*/
+			}
+		}
+	}
+	return 0;
 }
