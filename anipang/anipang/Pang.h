@@ -11,9 +11,3 @@ public:
 	void Pang_Pang(); // private 객체인 Row_Pang, Col_Pang, Item_Pang을 불러와서 터트리는 것을 전체 처리한다.
 
 };
-
-
-
-void Pang::Row_Pang() {
-
-}
