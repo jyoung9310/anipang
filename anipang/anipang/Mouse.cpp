@@ -35,6 +35,8 @@ void Mouse::Mouse_Click() {
 					Position[input_num][1] = (Mouse_Position[input_num].x) / 30;
 					Position[input_num][0] = (Mouse_Position[input_num].y - 17) / 30;
 				}
+			//	std::cout << Mouse_Position[input_num].y << "   " <<  Mouse_Position[input_num].x << std::endl;
+			//	system("pause");
 				if (this->sample->AniPang[Position[0][1]][Position[0][0]].type != 0) {
 					input_num = 2;
 					this->ClickPang->itemPang(Position[0][1], Position[0][0]);

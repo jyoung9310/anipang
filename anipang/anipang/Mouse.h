@@ -3,15 +3,17 @@
 #include"Block.h"
 #include<iostream>
 #include"AniPang.h"
-
+#include"Pang.h"
 
 class Mouse{
 	Ani_Pang *sample;
+	Pang *ClickPang;
 	int input_num = 0;
 	HWND GameScreen; // 콘솔화면의 크기를 잡기위한 윈도우 핸들러
 public:
-	Mouse(Ani_Pang *a) {
+	Mouse(Ani_Pang *a, Pang *b) {
 		this->sample = a;
+		this->ClickPang = b;
 	}
 	void Mouse_Click_InitSetting();
 	void Mouse_Click(); // Click 으로 좌표를 받아서

@@ -1,7 +1,7 @@
 #pragma once
 #include"AniPang.h"
 #include"Pangstack.h"
-#include"Mouse.h"
+//#include"Mouse.h"
 
 class Pang {
 private:
