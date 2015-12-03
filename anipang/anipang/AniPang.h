@@ -12,11 +12,8 @@ public:
 	int Game_time;
 	int Score;
 	int Bonus_time = 0;
-	//Deploy Deploy_Pang;
 	
-	Ani_Pang() {
-
-		//Deploy_Pang.Whole_Deploy(AniPang);
-	}
+	
+	Ani_Pang();
 
 };

@@ -1,11 +1,11 @@
 #include"Mouse.h"
 
-void Mouse::Block_Changer(Block AniPang[9][9]) {
+void Mouse::Block_Changer() {
 	Block Temp;
 	if ((abs(Position[0][0] - Position[1][0]) == 1 && abs(Position[0][1] - Position[1][1]) == 0) || (abs(Position[0][0] - Position[1][0]) == 0 && abs(Position[0][1] - Position[1][1]) == 1)) {
-		Temp = AniPang[this->Position[0][0]][this->Position[0][1]];
-		AniPang[this->Position[0][0]][this->Position[0][1]] = AniPang[this->Position[1][0]][this->Position[1][1]];
-		AniPang[this->Position[1][0]][this->Position[1][1]] = Temp;
+		Temp = this->sample->AniPang[this->Position[0][0]][this->Position[0][1]];
+		this->sample->AniPang[this->Position[0][0]][this->Position[0][1]] = this->sample->AniPang[this->Position[1][0]][this->Position[1][1]];
+		this->sample->AniPang[this->Position[1][0]][this->Position[1][1]] = Temp;
 	}
 }
 
@@ -32,6 +32,7 @@ void Mouse::Mouse_Click() {
 			}
 
 			if ((GetKeyState(VK_LBUTTON) & 0x100) == 0) { // 마우스 뗐을때
+				
 				input_num++;
 				count = 0;
 			}

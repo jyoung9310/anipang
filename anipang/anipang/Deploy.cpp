@@ -1,5 +1,5 @@
 #include"Deploy.h"
-
+/*
 void Deploy::Whole_Deploy(Block AniPang[9][9]) {
 	srand((unsigned int)time(NULL));
 	char random_char[4] = { '@', '#', '$', '&' };
@@ -17,3 +17,4 @@ void Deploy::Pang_Deploy() {
 	srand((unsigned int)time(NULL));
 	char random_char[4] = { '@', '#', '$', '&' };
 }
+*/
