@@ -55,7 +55,7 @@ void Checker::Pang_Position_init() {
 	}
 }
 */
-void Checker::rowCheck() {
+bool Checker::rowCheck() {
 	// ÅÍÁö´Â °÷ À§Ä¡¶û °¹¼ö
 	// return int[n][3] r= { xÁÂÇ¥, yÁÂÇ¥, °¹¼ö }
 
@@ -66,9 +66,10 @@ void Checker::rowCheck() {
 			int[3] pop();
 		}
 	*/
-
+	int pang = 0;
 	for (int row = 0; row < 9; row++) {
 		int count = 0;
+		int stackCol = 0;
 		for (int col = 0; col < 8; col++) {
 			if (this->sample->AniPang[row][col].Shape == this->sample->AniPang[row][col + 1].Shape) {
 				count++;
@@ -80,37 +81,57 @@ void Checker::rowCheck() {
 				}
 				*/
 			}
+			if (count == 2){
+				stackCol = col - 1;
+			}
 		}
-		if (count >= 0){
-			// stack.count=count+1
+		if (count >= 2){
+			pangStack.push(row, stackCol, 1 , count + 1);
 		}
 	}
+	if (pang == 0){
+		return false;
+	}
+	else {
+		return true;
+	}
 }
-void Checker::colCheck() {
-	int count;
-
+bool Checker::colCheck() {
+	int pang = 0;
 	for (int col = 0; col < 9; col++) {
-		count = 0;
-		for (int row = 0; row < 8; row++) {
-
+		int count = 0;
+		int stackRow = 0;
+		for (int row = 0; row < 8; row++){
 			if (this->sample->AniPang[row][col].Shape == this->sample->AniPang[row][col].Shape) {
 				count++;
+				/*
 				if (count >= 2) {
-					Pang_Position[row - 1][col] = 1;
-					Pang_Position[row][col] = 1;
-					Pang_Position[row + 1][col] = 1;
+				Pang_Position[row - 1][col] = 1;
+				Pang_Position[row][col] = 1;
+				Pang_Position[row + 1][col] = 1;
 				}
+				*/
 			}
-			else {
-				count = 0;
+			if (count == 2){
+				stackRow = row - 1;
 			}
 		}
+
+		if (count >= 2){
+			pangStack.push(stackRow, col, 2, count);
+			pang++;
+		}
+	}
+	if (pang == 0){
+		return false;
+	}
+	else {
+		return true;
 	}
 }
-void Checker::Check() {
+bool Checker::pangCheck() {
 	//this->Pang_Position_init();
-	this->rowCheck();
-	this->colCheck();
+	return (this->rowCheck() && this->colCheck());
 	//this->Pang_Position_Checker();
 }
 
