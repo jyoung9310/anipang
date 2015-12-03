@@ -4,7 +4,7 @@ Checker::Checker(Ani_Pang *a)
 {
 	this->sample = a;
 }
-
+/*
 void Checker::Pang_Position_Checker() {
 	int a = 0, b = 0;
 	bool check = false;
@@ -44,7 +44,8 @@ void Checker::Pang_Position_Checker() {
 
 
 }
-
+*/
+/*
 void Checker::Pang_Position_init() {
 	for (int row = 0; row < 9; row++) {
 
@@ -53,28 +54,39 @@ void Checker::Pang_Position_init() {
 		}
 	}
 }
+*/
+void Checker::rowCheck() {
+	// ÅÍÁö´Â °÷ À§Ä¡¶û °¹¼ö
+	// return int[n][3] r= { xÁÂÇ¥, yÁÂÇ¥, °¹¼ö }
 
-void Checker::Row_Checker() {
-	int count;
+	/*
+		class PangStack {
+			int stack[40][3];
+			void push(int r, int c, int cnt, int dir);
+			int[3] pop();
+		}
+	*/
 
 	for (int row = 0; row < 9; row++) {
-		count = 0;
+		int count = 0;
 		for (int col = 0; col < 8; col++) {
 			if (this->sample->AniPang[row][col].Shape == this->sample->AniPang[row][col + 1].Shape) {
 				count++;
+				/*
 				if (count >= 2) {
 					Pang_Position[row][col - 1] = 1;
 					Pang_Position[row][col] = 1;
 					Pang_Position[row][col + 1] = 1;
 				}
+				*/
 			}
-			else {
-				count = 0;
-			}
+		}
+		if (count >= 0){
+			// stack.count=count+1
 		}
 	}
 }
-void Checker::Col_Checker() {
+void Checker::colCheck() {
 	int count;
 
 	for (int col = 0; col < 9; col++) {
@@ -96,14 +108,13 @@ void Checker::Col_Checker() {
 	}
 }
 void Checker::Check() {
-	this->Pang_Position_init();
-	this->Row_Checker();
-	this->Col_Checker();
+	//this->Pang_Position_init();
+	this->rowCheck();
+	this->colCheck();
 	//this->Pang_Position_Checker();
-
-
 }
-bool Checker::Whole_Checker(Block input[9][9]) {
+
+bool Checker::wholeCheck(Block input[9][9]) {
 	for (int i = 0; i < 9; i++){
 		for (int j = 0; j < 9; j++){
 			if ((input[i][j].Shape == input[i][j + 1].Shape) &&
@@ -274,6 +285,10 @@ bool Checker::Whole_Checker(Block input[9][9]) {
 				....¤±
 				¤±¤±..
 				*/
+			}
+			else if (input[i][j].type != 0){
+				return 1;
+				// item ¿©ºÎ Ã¼Å©
 			}
 		}
 	}
