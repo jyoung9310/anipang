@@ -7,6 +7,6 @@ class PangStack {
 	int direction[SIZEOFSTACK];
 	int count[SIZEOFSTACK];
 public:
-	void push(int, int, int, int);//row, col, dir, count
+	void push(int rowinput, int colinput, int direcioninput, int countinput);//row, col, dir, count
 	int* pop();//int[4]->row, col, dir ,count
 };
