@@ -16,6 +16,22 @@ Ani_Pang:: Ani_Pang() {
 		for (int col = 0; col < 9; col++) {
 			a = std::rand() % 4;
 			AniPang[row][col].Shape = shape[a];
+			if (AniPang[row][col].Shape == '@') {
+				AniPang[row][col].Color = 1;
+				AniPang[row][col].type = '0';
+			}
+			else if (AniPang[row][col].Shape == '#') {
+				AniPang[row][col].Color = 2;
+				AniPang[row][col].type = '0';
+			}
+			else if (AniPang[row][col].Shape == '$') {
+				AniPang[row][col].Color = 3;
+				AniPang[row][col].type = '0';
+			}
+			else if (AniPang[row][col].Shape == '&') {
+				AniPang[row][col].Color = 4;
+				AniPang[row][col].type = '0';
+			}
 		}
 	}
 
