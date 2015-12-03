@@ -4,6 +4,11 @@ Pang::Pang(Ani_Pang *a) {
 	this->sample = a;
 }
 
-void Pang::Row_Pang() {
+void Pang::rowPang() {
+}
+void Pang::colPang(){
 
+}
+void Pang::itemPang(int row, int col){
+	
 }

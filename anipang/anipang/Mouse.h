@@ -4,7 +4,8 @@
 #include<iostream>
 
 
-class Mouse_Input {
+class Mouse{
+	Ani_Pang *sample;
 	int input_num = 0;
 	HWND GameScreen; // 콘솔화면의 크기를 잡기위한 윈도우 핸들러
 public:

@@ -1,6 +1,6 @@
 #include"Mouse.h"
 
-void Mouse_Input::Block_Changer(Block AniPang[9][9]) {
+void Mouse::Block_Changer(Block AniPang[9][9]) {
 	Block Temp;
 	if ((abs(Position[0][0] - Position[1][0]) == 1 && abs(Position[0][1] - Position[1][1]) == 0) || (abs(Position[0][0] - Position[1][0]) == 0 && abs(Position[0][1] - Position[1][1]) == 1)) {
 		Temp = AniPang[this->Position[0][0]][this->Position[0][1]];
@@ -9,12 +9,12 @@ void Mouse_Input::Block_Changer(Block AniPang[9][9]) {
 	}
 }
 
-void Mouse_Input::Mouse_Click_InitSetting() {
+void Mouse::Mouse_Click_InitSetting() {
 	SetConsoleTitle(L"mouse");
 	LPCWSTR a;
 	GameScreen = FindWindow(NULL, TEXT("mouse"));
 }
-void Mouse_Input::Mouse_Click() {
+void Mouse::Mouse_Click() {
 	int count = 0;
 	POINT Mouse_Position[2]; // 화면에서 마우스의 실제 좌표값
 	while (input_num < 2) {
