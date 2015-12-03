@@ -12,11 +12,13 @@ void PangStack::push(int rowinput, int colinput, int directioninput, int countin
 }
 
 int* PangStack::pop() {
-
-	row[pushnum] = '\0';
-	col[pushnum] = '\0';
-	direction[pushnum] = '\0';
-	count[pushnum] = '\0';
-
+	int returnValue[4];
 	pushnum--;
+	returnValue[0] = row[pushnum];
+	returnValue[1] = col[pushnum];
+	returnValue[2] = direction[pushnum];
+	returnValue[3] = count[pushnum];
+	return returnValue;
+
+
 }
