@@ -10,7 +10,7 @@ bool Checker::rowCheck() {
 	for (int row = 0; row < 9; row++) {
 		int count = 0;
 		for (int col = 0; col < 8; col++) {
-			if (this->sample->AniPang[row][col].Shape == this->sample->AniPang[row][col + 1].Shape) {
+			if (this->sample->AniPang[row][col].getShape() == this->sample->AniPang[row][col + 1].getShape()) {
 				count++;
 			}
 			else if (count >= 2){
@@ -33,7 +33,7 @@ bool Checker::colCheck() {
 	for (int col = 0; col < 9; col++) {
 		int count = 0;
 		for (int row = 0; row < 8; row++){
-			if (this->sample->AniPang[row][col].Shape == this->sample->AniPang[row][col].Shape) {
+			if (this->sample->AniPang[row][col].getShape() == this->sample->AniPang[row][col].getShape()) {
 				count++;
 			}
 			else if (count >= 2){
@@ -58,8 +58,8 @@ bool Checker::pangCheck() {
 bool Checker::wholeCheck(Block input[9][9]) {
 	for (int i = 0; i < 9; i++){
 		for (int j = 0; j < 9; j++){
-			if ((input[i][j].Shape == input[i][j + 1].Shape) &&
-				(input[i][j].Shape == input[i][j + 3].Shape) &&
+			if ((input[i][j].getShape() == input[i][j + 1].getShape()) &&
+				(input[i][j].getShape() == input[i][j + 3].getShape()) &&
 				(j < 5)
 				) {
 				return 1;
@@ -68,8 +68,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				*/
 
 			}
-			else if ((input[i][j].Shape == input[i][j + 2].Shape) &&
-				(input[i][j].Shape == input[i][j + 3].Shape) &&
+			else if ((input[i][j].getShape() == input[i][j + 2].getShape()) &&
+				(input[i][j].getShape() == input[i][j + 3].getShape()) &&
 				(j < 5)
 				) {
 				return 1;
@@ -77,8 +77,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				け..けけ
 				*/
 			}
-			else if ((input[i][j].Shape == input[i + 1][j].Shape) &&
-				(input[i][j].Shape == input[i + 3][j].Shape) &&
+			else if ((input[i][j].getShape() == input[i + 1][j].getShape()) &&
+				(input[i][j].getShape() == input[i + 3][j].getShape()) &&
 				(i < 5)
 				) {
 				return 1;
@@ -89,8 +89,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				け
 				*/
 			}
-			else if ((input[i][j].Shape == input[i + 2][j].Shape) &&
-				(input[i][j].Shape == input[i + 3][j].Shape) &&
+			else if ((input[i][j].getShape() == input[i + 2][j].getShape()) &&
+				(input[i][j].getShape() == input[i + 3][j].getShape()) &&
 				(i < 5)
 				) {
 				return 1;
@@ -101,8 +101,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				け
 				*/
 			}
-			else if ((input[i][j + 1].Shape == input[i + 1][j].Shape) &&
-				(input[i][j + 1].Shape == input[i + 1][j + 2].Shape) &&
+			else if ((input[i][j + 1].getShape() == input[i + 1][j].getShape()) &&
+				(input[i][j + 1].getShape() == input[i + 1][j + 2].getShape()) &&
 				(i < 7) && (j<6)
 				) {
 				return 1;
@@ -111,8 +111,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				け..け
 				*/
 			}
-			else if ((input[i][j].Shape == input[i][j + 2].Shape) &&
-				(input[i][j].Shape == input[i + 1][j + 1].Shape) &&
+			else if ((input[i][j].getShape() == input[i][j + 2].getShape()) &&
+				(input[i][j].getShape() == input[i + 1][j + 1].getShape()) &&
 				(i < 7) && (j < 6)
 				) {
 				return 1;
@@ -121,8 +121,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				..け..
 				*/
 			}
-			else if ((input[i][j].Shape == input[i + 1][j + 1].Shape) &&
-				(input[i][j].Shape == input[i + 2][j].Shape) &&
+			else if ((input[i][j].getShape() == input[i + 1][j + 1].getShape()) &&
+				(input[i][j].getShape() == input[i + 2][j].getShape()) &&
 				(i < 6) && (j < 7)
 				) {
 				return 1;
@@ -132,8 +132,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				け..
 				*/
 			}
-			else if ((input[i][j + 1].Shape == input[i + 1][j].Shape) &&
-				(input[i][j + 1].Shape == input[i + 2][j + 2].Shape) &&
+			else if ((input[i][j + 1].getShape() == input[i + 1][j].getShape()) &&
+				(input[i][j + 1].getShape() == input[i + 2][j + 2].getShape()) &&
 				(i < 6) && (j < 7)
 				) {
 				return 1;
@@ -143,8 +143,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				..け
 				*/
 			}
-			else if ((input[i][j].Shape == input[i + 1][j].Shape) &&
-				(input[i][j].Shape == input[i + 2][j + 1].Shape) &&
+			else if ((input[i][j].getShape() == input[i + 1][j].getShape()) &&
+				(input[i][j].getShape() == input[i + 2][j + 1].getShape()) &&
 				(i < 6) && (j < 7)
 				) {
 				return 1;
@@ -154,8 +154,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				..け
 				*/
 			}
-			else if ((input[i][j + 1].Shape == input[i + 1][j + 1].Shape) &&
-				(input[i][j + 1].Shape == input[i + 2][j].Shape) &&
+			else if ((input[i][j + 1].getShape() == input[i + 1][j + 1].getShape()) &&
+				(input[i][j + 1].getShape() == input[i + 2][j].getShape()) &&
 				(i < 6) && (j < 7)
 				) {
 				return 1;
@@ -165,8 +165,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				け..
 				*/
 			}
-			else if ((input[i][j].Shape == input[i + 1][j + 1].Shape) &&
-				(input[i][j].Shape == input[i + 2][j + 1].Shape) &&
+			else if ((input[i][j].getShape() == input[i + 1][j + 1].getShape()) &&
+				(input[i][j].getShape() == input[i + 2][j + 1].getShape()) &&
 				(i < 6) && (j < 7)
 				) {
 				return 1;
@@ -176,8 +176,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				..け
 				*/
 			}
-			else if ((input[i][j + 1].Shape == input[i + 1][j].Shape) &&
-				(input[i][j + 1].Shape == input[i + 2][j].Shape) &&
+			else if ((input[i][j + 1].getShape() == input[i + 1][j].getShape()) &&
+				(input[i][j + 1].getShape() == input[i + 2][j].getShape()) &&
 				(i < 6) && (j < 7)
 				) {
 				return 1;
@@ -187,8 +187,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				け..
 				*/
 			}
-			else if ((input[i][j].Shape == input[i][j + 1].Shape) &&
-				(input[i][j].Shape == input[i + 1][j + 2].Shape) &&
+			else if ((input[i][j].getShape() == input[i][j + 1].getShape()) &&
+				(input[i][j].getShape() == input[i + 1][j + 2].getShape()) &&
 				(i < 7) && (j < 6)
 				) {
 				return 1;
@@ -197,8 +197,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				....け
 				*/
 			}
-			else if ((input[i][j + 1].Shape == input[i][j + 2].Shape) &&
-				(input[i][j + 1].Shape == input[i + 1][j].Shape) &&
+			else if ((input[i][j + 1].getShape() == input[i][j + 2].getShape()) &&
+				(input[i][j + 1].getShape() == input[i + 1][j].getShape()) &&
 				(i < 7) && (j < 6)
 				) {
 				return 1;
@@ -207,8 +207,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				け....
 				*/
 			}
-			else if ((input[i][j].Shape == input[i + 1][j + 1].Shape) &&
-				(input[i][j].Shape == input[i + 1][j + 2].Shape) &&
+			else if ((input[i][j].getShape() == input[i + 1][j + 1].getShape()) &&
+				(input[i][j].getShape() == input[i + 1][j + 2].getShape()) &&
 				(i < 7) && (j < 6)
 				) {
 				return 1;
@@ -217,8 +217,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				..けけ
 				*/
 			}
-			else if ((input[i][j + 2].Shape == input[i + 1][j].Shape) &&
-				(input[i][j + 2].Shape == input[i + 1][j + 1].Shape) &&
+			else if ((input[i][j + 2].getShape() == input[i + 1][j].getShape()) &&
+				(input[i][j + 2].getShape() == input[i + 1][j + 1].getShape()) &&
 				(i < 7) && (j < 6)
 				) {
 				return 1;
@@ -227,7 +227,7 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				けけ..
 				*/
 			}
-			else if (input[i][j].type != 0){
+			else if (input[i][j].getType() != 0){
 				return 1;
 				// item 食採 端滴
 			}
