@@ -1,6 +1,5 @@
 
 #include<windows.h>
-#include"Block.h"
 #include"AniPang.h"
 #include"Screen.h"
 #include"Mouse.h"
@@ -16,8 +15,8 @@ void main()
 	
 	Ani_Pang Heart_Pang;
 	Screen screenPrn(&Heart_Pang);
-	Pang pang(&Heart_Pang);
 	Checker checker(&Heart_Pang);
+	Pang pang(&Heart_Pang,&checker);
 	Mouse input_mouse(&Heart_Pang, &pang , &checker);
 	
 	

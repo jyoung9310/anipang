@@ -3,22 +3,20 @@
 
 
 void PangStack::push(int rowinput, int colinput, int directioninput, int countinput) {
-	row[pushnum] = rowinput;
-	col[pushnum] = colinput;
-	direction[pushnum] = directioninput;
-	count[pushnum] = countinput;
+	this->row[pushnum] = rowinput;
+	this->col[pushnum] = colinput;
+	this->direction[pushnum] = directioninput;
+	this->count[pushnum] = countinput;
 
-	pushnum++;
+	this->pushnum++;
 }
 
 int* PangStack::pop() {
 	int returnValue[4];
-	pushnum--;
-	returnValue[0] = row[pushnum];
-	returnValue[1] = col[pushnum];
-	returnValue[2] = direction[pushnum];
-	returnValue[3] = count[pushnum];
+	this->pushnum--;
+	returnValue[0] = this->row[pushnum];//ÇàÁÂÇ¥
+	returnValue[1] = this->col[pushnum];//¿­ÁÂÇ¥
+	returnValue[2] = this->direction[pushnum];//¹æÇâ
+	returnValue[3] = this->count[pushnum];//°³¼ö
 	return returnValue;
-
-
 }
