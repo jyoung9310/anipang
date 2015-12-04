@@ -12,3 +12,8 @@ void Pang::colPang(){
 void Pang::itemPang(int row, int col){
 	
 }
+
+void Pang::PangPang() {
+	this->rowPang();
+	this->colPang();
+}

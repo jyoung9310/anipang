@@ -17,8 +17,9 @@ void main()
 	Ani_Pang Heart_Pang;
 	Screen screenPrn(&Heart_Pang);
 	Pang pang(&Heart_Pang);
-	Mouse input_mouse(&Heart_Pang, &pang);
 	Checker checker(&Heart_Pang);
+	Mouse input_mouse(&Heart_Pang, &pang , &checker);
+	
 	
 	input_mouse.Mouse_Click_InitSetting();
 	Heart_Pang.Score = 0;
