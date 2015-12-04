@@ -17,7 +17,7 @@ void main()
 	Screen screenPrn(&Heart_Pang);
 	Checker checker(&Heart_Pang);
 	Pang pang(&Heart_Pang,&checker);
-	Mouse input_mouse(&Heart_Pang, &pang , &checker);
+	Mouse input_mouse(&Heart_Pang,&pang ,&checker);
 	
 	
 	input_mouse.Mouse_Click_InitSetting();

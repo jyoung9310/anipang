@@ -1,7 +1,7 @@
 #include"Screen.h"
 #include <iostream>
 #include <Windows.h>
-
+#include < stdio.h>
 using namespace std;
 
 Screen::Screen(Ani_Pang *a)
@@ -17,7 +17,8 @@ void Screen::Prn_Game_Screen() {
 	for (int row = 0; row < 9; row++) {
 		for (int col = 0; col < 9; col++) {
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), this->sample->AniPang[row][col].getColor());//텍스트 색상 바꿈
-			cout << sample->AniPang[row][col].getShape() << "   ";//화면 출력
+			cout<< sample->AniPang[row][col].getShape() << "   ";//화면 출력
+			//puts("#  ");
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0x0007);//텍스트 색상 원래대로 돌림
 		}
 		cout << endl << endl;

@@ -14,4 +14,5 @@ public:
 	void setBonustime(int sample);//보너스 시간 입력 함수
 	void Timer();//타이머
 	Ani_Pang();//시간 및 점수 초기화 및 애니팡 모양 및 색 초기화
+	void makeItem(int row, int col, int type);
 };

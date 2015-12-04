@@ -45,3 +45,18 @@ Ani_Pang::Ani_Pang()
 		}
 	}
 }
+
+void Ani_Pang::makeItem(int row, int col, int type) {
+	if (type == 1) {
+		this->AniPang[row][col].setType(1);
+		this->AniPang[row][col].setShape('-');
+	}
+	else if (type ==2) {
+		this->AniPang[row][col].setType(2);
+		this->AniPang[row][col].setShape('!');
+	}
+	else if (type == 3) {
+		this->AniPang[row][col].setType(3);
+		this->AniPang[row][col].setShape('?');
+	}
+}
