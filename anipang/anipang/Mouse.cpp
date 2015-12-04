@@ -9,7 +9,7 @@ void Mouse::Block_Changer() {
 		this->sample->AniPang[this->Position[1][0]][this->Position[1][1]] = Temp;
 	}
 	if (this->check->pangCheck() == 1) { // checker로 확인해서 마우스 클릭으로 블록의 위치를 서로 바꿨을때 터진다면 팡을 호출한다.
-		
+		this->ClickPang->PangPang();
 	
 	}
 	else if (this->check->pangCheck() == 0) { // 터지지 않을 시 다시 원위치로 돌린다.
