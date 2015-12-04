@@ -10,7 +10,7 @@ Screen::Screen(Ani_Pang *a)
 }//Heart_Pang과 연결
 
 void Screen::Prn_Time_Score() {
-	cout << "남은시간:" << this->sample->getGametime() << "\t" << "현재 스코어:" << this->sample->getScore() << endl << endl << endl;//시간 스코어 출력
+	cout << "남은시간:" << this->sample->getGametime() << "\t" << "현재 스코어:" << this->sample->getScore() << endl;//시간 스코어 출력
 }
 
 void Screen::Prn_Game_Screen() {

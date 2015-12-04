@@ -10,7 +10,7 @@ char Block::getShape()
 	return this->Shape;
 }//모양 호출 함수
 
-char Block::getType()
+int Block::getType()
 {
 	return this->type;
 }//블록 타입 호출 함수
@@ -43,7 +43,12 @@ void Block::setBlock(int index)
 	}
 }//블록 모양과 색 지정 함수
 
-void Block::setType(char sample)
+void Block::setType(int sample)
 {
 	this->type = sample;
+}
+
+void Block::setShape(char sample)
+{
+	this->Shape = sample;
 }
