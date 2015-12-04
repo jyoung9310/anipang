@@ -52,7 +52,7 @@ bool Checker::colCheck() {
 }
 
 bool Checker::pangCheck() {
-	return (this->rowCheck() && this->colCheck());
+	return (this->rowCheck() || this->colCheck());
 }
 
 bool Checker::wholeCheck() {
