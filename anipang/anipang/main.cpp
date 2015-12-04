@@ -27,7 +27,7 @@ void main()
 	while (1) {
 		
 		system("CLS");
-		checker.wholeCheck(Heart_Pang.AniPang);
+		checker.wholeCheck();
 		Heart_Pang.Timer();
 		screenPrn.Prn_Time_Score();
 		screenPrn.Prn_Game_Screen();

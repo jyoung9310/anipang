@@ -55,11 +55,11 @@ bool Checker::pangCheck() {
 	return (this->rowCheck() && this->colCheck());
 }
 
-bool Checker::wholeCheck(Block input[9][9]) {
+bool Checker::wholeCheck() {
 	for (int i = 0; i < 9; i++){
 		for (int j = 0; j < 9; j++){
-			if ((input[i][j].getShape() == input[i][j + 1].getShape()) &&
-				(input[i][j].getShape() == input[i][j + 3].getShape()) &&
+			if ((this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i][j+1].getShape()) &&
+				(this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i][j+3].getShape()) &&
 				(j < 5)
 				) {
 				return 1;
@@ -68,8 +68,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				*/
 
 			}
-			else if ((input[i][j].getShape() == input[i][j + 2].getShape()) &&
-				(input[i][j].getShape() == input[i][j + 3].getShape()) &&
+			else if ((this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i][j+2].getShape()) &&
+				(this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i][j+3].getShape()) &&
 				(j < 5)
 				) {
 				return 1;
@@ -77,8 +77,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				け..けけ
 				*/
 			}
-			else if ((input[i][j].getShape() == input[i + 1][j].getShape()) &&
-				(input[i][j].getShape() == input[i + 3][j].getShape()) &&
+			else if ((this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i + 1][j].getShape()) &&
+				(this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i + 3][j].getShape()) &&
 				(i < 5)
 				) {
 				return 1;
@@ -89,8 +89,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				け
 				*/
 			}
-			else if ((input[i][j].getShape() == input[i + 2][j].getShape()) &&
-				(input[i][j].getShape() == input[i + 3][j].getShape()) &&
+			else if ((this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i + 2][j].getShape()) &&
+				(this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i + 3][j].getShape()) &&
 				(i < 5)
 				) {
 				return 1;
@@ -101,8 +101,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				け
 				*/
 			}
-			else if ((input[i][j + 1].getShape() == input[i + 1][j].getShape()) &&
-				(input[i][j + 1].getShape() == input[i + 1][j + 2].getShape()) &&
+			else if ((this->sample->AniPang[i][j + 1].getShape() == this->sample->AniPang[i + 1][j].getShape()) &&
+				(this->sample->AniPang[i][j + 1].getShape() == this->sample->AniPang[i + 1][j + 2].getShape()) &&
 				(i < 7) && (j<6)
 				) {
 				return 1;
@@ -111,8 +111,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				け..け
 				*/
 			}
-			else if ((input[i][j].getShape() == input[i][j + 2].getShape()) &&
-				(input[i][j].getShape() == input[i + 1][j + 1].getShape()) &&
+			else if ((this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i][j + 2].getShape()) &&
+				(this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i + 1][j + 1].getShape()) &&
 				(i < 7) && (j < 6)
 				) {
 				return 1;
@@ -121,8 +121,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				..け..
 				*/
 			}
-			else if ((input[i][j].getShape() == input[i + 1][j + 1].getShape()) &&
-				(input[i][j].getShape() == input[i + 2][j].getShape()) &&
+			else if ((this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i + 1][j + 1].getShape()) &&
+				(this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i + 2][j].getShape()) &&
 				(i < 6) && (j < 7)
 				) {
 				return 1;
@@ -132,8 +132,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				け..
 				*/
 			}
-			else if ((input[i][j + 1].getShape() == input[i + 1][j].getShape()) &&
-				(input[i][j + 1].getShape() == input[i + 2][j + 2].getShape()) &&
+			else if ((this->sample->AniPang[i][j + 1].getShape() == this->sample->AniPang[i + 1][j].getShape()) &&
+				(this->sample->AniPang[i][j + 1].getShape() == this->sample->AniPang[i + 2][j + 2].getShape()) &&
 				(i < 6) && (j < 7)
 				) {
 				return 1;
@@ -143,8 +143,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				..け
 				*/
 			}
-			else if ((input[i][j].getShape() == input[i + 1][j].getShape()) &&
-				(input[i][j].getShape() == input[i + 2][j + 1].getShape()) &&
+			else if ((this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i + 1][j].getShape()) &&
+				(this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i + 2][j + 1].getShape()) &&
 				(i < 6) && (j < 7)
 				) {
 				return 1;
@@ -154,8 +154,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				..け
 				*/
 			}
-			else if ((input[i][j + 1].getShape() == input[i + 1][j + 1].getShape()) &&
-				(input[i][j + 1].getShape() == input[i + 2][j].getShape()) &&
+			else if ((this->sample->AniPang[i][j + 1].getShape() == this->sample->AniPang[i + 1][j + 1].getShape()) &&
+				(this->sample->AniPang[i][j + 1].getShape() == this->sample->AniPang[i + 2][j].getShape()) &&
 				(i < 6) && (j < 7)
 				) {
 				return 1;
@@ -165,8 +165,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				け..
 				*/
 			}
-			else if ((input[i][j].getShape() == input[i + 1][j + 1].getShape()) &&
-				(input[i][j].getShape() == input[i + 2][j + 1].getShape()) &&
+			else if ((this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i + 1][j + 1].getShape()) &&
+				(this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i + 2][j + 1].getShape()) &&
 				(i < 6) && (j < 7)
 				) {
 				return 1;
@@ -176,8 +176,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				..け
 				*/
 			}
-			else if ((input[i][j + 1].getShape() == input[i + 1][j].getShape()) &&
-				(input[i][j + 1].getShape() == input[i + 2][j].getShape()) &&
+			else if ((this->sample->AniPang[i][j + 1].getShape() == this->sample->AniPang[i + 1][j].getShape()) &&
+				(this->sample->AniPang[i][j + 1].getShape() == this->sample->AniPang[i + 2][j].getShape()) &&
 				(i < 6) && (j < 7)
 				) {
 				return 1;
@@ -187,8 +187,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				け..
 				*/
 			}
-			else if ((input[i][j].getShape() == input[i][j + 1].getShape()) &&
-				(input[i][j].getShape() == input[i + 1][j + 2].getShape()) &&
+			else if ((this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i][j + 1].getShape()) &&
+				(this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i + 1][j + 2].getShape()) &&
 				(i < 7) && (j < 6)
 				) {
 				return 1;
@@ -197,8 +197,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				....け
 				*/
 			}
-			else if ((input[i][j + 1].getShape() == input[i][j + 2].getShape()) &&
-				(input[i][j + 1].getShape() == input[i + 1][j].getShape()) &&
+			else if ((this->sample->AniPang[i][j + 1].getShape() == this->sample->AniPang[i][j + 2].getShape()) &&
+				(this->sample->AniPang[i][j + 1].getShape() == this->sample->AniPang[i + 1][j].getShape()) &&
 				(i < 7) && (j < 6)
 				) {
 				return 1;
@@ -207,8 +207,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				け....
 				*/
 			}
-			else if ((input[i][j].getShape() == input[i + 1][j + 1].getShape()) &&
-				(input[i][j].getShape() == input[i + 1][j + 2].getShape()) &&
+			else if ((this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i + 1][j + 1].getShape()) &&
+				(this->sample->AniPang[i][j].getShape() == this->sample->AniPang[i + 1][j + 2].getShape()) &&
 				(i < 7) && (j < 6)
 				) {
 				return 1;
@@ -217,8 +217,8 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				..けけ
 				*/
 			}
-			else if ((input[i][j + 2].getShape() == input[i + 1][j].getShape()) &&
-				(input[i][j + 2].getShape() == input[i + 1][j + 1].getShape()) &&
+			else if ((this->sample->AniPang[i][j + 2].getShape() == this->sample->AniPang[i + 1][j].getShape()) &&
+				(this->sample->AniPang[i][j + 2].getShape() == this->sample->AniPang[i + 1][j + 1].getShape()) &&
 				(i < 7) && (j < 6)
 				) {
 				return 1;
@@ -227,7 +227,7 @@ bool Checker::wholeCheck(Block input[9][9]) {
 				けけ..
 				*/
 			}
-			else if (input[i][j].getType() != 0){
+			else if (this->sample->AniPang[i][j].getType() != 0){
 				return 1;
 				// item 食採 端滴
 			}
