@@ -10,7 +10,6 @@ public:
 	Screen(Ani_Pang *a);//Heart_Pang과 연결하기 위한 생성자
 	void Prn_Time_Score(); // 시간과 점수 출력
 	void Prn_Game_Screen(); // 게임화면 즉 에니팡 화면을 출력한다.
-											   //	void Color_Item(); // 이미 Block으로 색상 속성을 넣었기 떄문에 사용이 필요할 지는 의문이다.
 	void Game_Over(); // timer 가 0이 되어 게임이 종료되었을때 화면의 출력부분
 };
 

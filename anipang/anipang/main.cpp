@@ -22,7 +22,6 @@ void main()
 	
 	
 	input_mouse.Mouse_Click_InitSetting();
-	Heart_Pang.Score = 0;
 //	screenPrn.Prn_Time_Score(Heart_Pang.Game_time, Heart_Pang.Score);
 //	screenPrn.Prn_Game_Screen(Heart_Pang.AniPang);
 	while (1) {

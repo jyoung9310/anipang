@@ -1,38 +1,47 @@
 #include"AniPang.h"
+#include<ctime>
+#include<cstdlib>
 
 void Ani_Pang::Timer() {
 	static int time_now = time(NULL);
 
-	Game_time = 120 - time(NULL) + time_now + Bonus_time;
+	this->Game_time = 120 - time(NULL) + time_now + this->Bonus_time;
 
-	Bonus_time = 0;
+	this->Bonus_time = 0;
 }
 
-Ani_Pang:: Ani_Pang() {/*
-	srand((unsigned int)time(NULL));
-	int a = std::rand() % 4;
-	char shape[4] = { '@','#','$','&' };
-	for (int row = 0; row < 9; row++) {
-		for (int col = 0; col < 9; col++) {
-			a = std::rand() % 4;
-			AniPang[row][col].getShape() = shape[a];
-			if (AniPang[row][col].Shape == '@') {
-				AniPang[row][col].Color = 1;
-				AniPang[row][col].type = 0;
-			}
-			else if (AniPang[row][col].Shape == '#') {
-				AniPang[row][col].Color = 2;
-				AniPang[row][col].type = 0;
-			}
-			else if (AniPang[row][col].Shape == '$') {
-				AniPang[row][col].Color = 3;
-				AniPang[row][col].type = 0;
-			}
-			else if (AniPang[row][col].Shape == '&') {
-				AniPang[row][col].Color = 4;
-				AniPang[row][col].type = 0;
-			}
-		}
-	}*/
+int Ani_Pang::getGametime()
+{
+	return this->Game_time;
+}
 
+int Ani_Pang::getScore()
+{
+	return this->Score;
+}
+
+void Ani_Pang::setBonustime(int sample)
+{
+	this->Bonus_time = sample;
+}
+
+void Ani_Pang::setScore(int sample)
+{
+	this->Score += sample;
+}
+
+Ani_Pang::Ani_Pang()
+{
+	srand((unsigned int)time(NULL));
+
+	this->Bonus_time = 0;
+	this->Score = 0;
+
+	for (int i = 0; i < 9; i++)
+	{
+		for (int j = 0; j < 9; j++)
+		{
+			this->AniPang[i][j].setBlock(rand() % 4);
+		}
+	}
 }
