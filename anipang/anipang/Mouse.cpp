@@ -46,7 +46,7 @@ void Mouse::Mouse_Click() {
 				}
 			//	std::cout << Mouse_Position[input_num].y << "   " <<  Mouse_Position[input_num].x << std::endl;
 			//	system("pause");
-				if (this->sample->AniPang[Position[0][1]][Position[0][0]].type != 0) {
+				if (this->sample->AniPang[Position[0][1]][Position[0][0]].getType() != 0) {
 					input_num = 2;
 					this->ClickPang->itemPang(Position[0][1], Position[0][0]);
 				}
